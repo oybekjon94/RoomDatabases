@@ -31,6 +31,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        requestPermissionLauncher.launch(arrayOf(
+            Manifest.permission.CAMERA,
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        ) )
         binding.apply {
             galleryBtn.setOnClickListener{
                  val intent = Intent(this@MainActivity,GalleryActivity::class.java)
@@ -56,9 +60,9 @@ class MainActivity : AppCompatActivity() {
             }
             //pastdagisi androidning yangi feature
             //oson va qisqa
-            newPermissionBtn.setOnClickListener {
-               requestPermissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
-            }
+//            newPermissionBtn.setOnClickListener {
+//               requestPermissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
+//            }
 
             dexterBtn.setOnClickListener {
                 Dexter.withContext(this@MainActivity)
@@ -120,8 +124,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private val requestPermissionLauncher =
-        registerForActivityResult(ActivityResultContracts.RequestPermission()){isGranted ->
-            if (isGranted){
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()){map ->
+            if (map[Manifest.permission.CAMERA] == true && map[Manifest.permission.READ_EXTERNAL_STORAGE] ==  true){
 
             }else{
 
