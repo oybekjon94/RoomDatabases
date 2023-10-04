@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/gallery_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gallery"/>
+
+    <Button
+        android:id="@+id/camera_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Camera"
+        />
+
+    <Button
+        android:id="@+id/permission_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Permission" />
+
+    <Button
+        android:id="@+id/new_permission_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NewPermission" />
+    <Button
+        android:id="@+id/dexter_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dexter" />
+</LinearLayout>
