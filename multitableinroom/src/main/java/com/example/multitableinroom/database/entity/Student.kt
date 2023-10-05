@@ -10,12 +10,13 @@ import androidx.room.PrimaryKey
     foreignKeys = [ForeignKey(
         entity = Region::class,
         parentColumns = arrayOf("id"), //bu Studentin id si!
-        childColumns = arrayOf("region_id") //bu id Regionni id si!
+        childColumns = arrayOf("region_id"), //bu id Regionni id si!
+        onDelete = ForeignKey.CASCADE
     )]
 )
 data class Student(
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    val id: Int = 0,
     val name: String,
     val age: Int,
     @ColumnInfo(name = "region_id")
